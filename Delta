@@ -1,0 +1,56 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApplication1
+{
+    public class App
+    {
+        
+        private int a = int.Parse(Console.ReadLine());
+        private int b = int.Parse(Console.ReadLine());
+        private int c = int.Parse(Console.ReadLine());
+
+        public App(int a, int b, int c)
+        {
+            this.a = a;
+            this.b = b;
+            this.c = c;
+        }
+
+        public virtual string rozwiaz()
+        {
+            string rozwiazanie = "";
+            double delta;
+            delta = (b * b - 4 * a * c);
+            if (delta > 0)
+            {
+                delta = Math.Sqrt(delta);
+                double x1 = (-b - delta) / (2 * a);
+                double x2 = (-b + delta) / (2 * a);
+                rozwiazanie = "rownanie posiada dwa pierwiastki " + x1 + " " + x2;
+            }
+            else if (delta == 0)
+            {
+                delta = Math.Sqrt(delta);
+                double x0 = -b / (2 * a);
+                Console.WriteLine(x0);
+                rozwiazanie = "rownanie posiada jeden pierwiastki " + x0;
+            }
+            else
+            {
+                rozwiazanie = "Brak pierwiastkow rzeczywistych";
+            }
+            return rozwiazanie;
+        }
+
+        public static void Main(string[] args)
+        {
+            App rownanie = new App(1, 4, -2);
+            Console.WriteLine(rownanie.rozwiaz());
+            Console.ReadLine();
+        }
+    }
+}
