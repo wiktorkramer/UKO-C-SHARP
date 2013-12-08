@@ -30,11 +30,6 @@ namespace calc
             label4.Text = wynik;
         }
 
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             int l1 = 0;
@@ -77,10 +72,6 @@ namespace calc
             label4.Text = wynik;
         }
 
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void label2_Click(object sender, EventArgs e)
         {
