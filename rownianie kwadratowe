@@ -1,0 +1,76 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+namespace WindowsFormsApplication2
+{
+    public partial class Form1 : Form
+    {
+        public Form1()
+        {
+            InitializeComponent();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int a = 0;
+            int b = 0;
+            int c = 0;
+            string wynik = "";
+            string wynik2 = "";
+            string wynik3 = "";
+
+            a = int.Parse(textBox1.Text);
+            b = int.Parse(textBox2.Text);
+            c = int.Parse(textBox3.Text);
+
+            double delta;
+            delta = (b * b - 4 * a * c);
+            if (delta > 0)
+            {
+                delta = Math.Sqrt(delta);
+                double x1 = (-b - delta) / (2 * a);
+                double x2 = (-b + delta) / (2 * a);
+                wynik = string.Format("x1  to: {0:.00}", x1);
+                wynik2 = string.Format("x2  to: {0:.00}", x2);
+                label1.Text = wynik;
+                label5.Text = wynik2;
+            }
+            else if (delta == 0)
+            {
+                delta = Math.Sqrt(delta);
+                double x0 = -b / (2 * a);
+                wynik = string.Format("x0  to {0:.00}", x0);
+                label1.Text = wynik;
+            }
+            else
+            {
+                wynik = string.Format("Nie ma pierwiastkow");
+                label1.Text = wynik;
+            }
+            wynik3 = string.Format("Delta to:  {0:.00}", delta);
+            label6.Text = wynik3;
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+    }
+}
